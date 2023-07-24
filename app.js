@@ -1,14 +1,13 @@
 import express from "express";
 import { engine } from "express-handlebars";
-// import bodyParser from "body-parser";
-// import restaurantList from "./restaurant.json" assert { type: 'json' }
+import generatePassword from "./generate_password.js";
 
 const app = express()
 const port = 3000
 
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
-app.use(express.static('public'))
+// app.use(express.static('public'))
 
 app.use(express.urlencoded({ extended: true}))
 
@@ -19,7 +18,7 @@ app.get('/', (req, res) =>{
 })
 
 app.post('/', (req, res) =>{
-    console.log(req.body)
+    console.log('random password:', generatePassword(req.body))
     res.render('index')
 })
 
