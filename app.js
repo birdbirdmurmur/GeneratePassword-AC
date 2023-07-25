@@ -7,12 +7,9 @@ const port = 3000
 
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
-// app.use(express.static('public'))
 
 app.use(express.urlencoded({ extended: true}))
 
-
-//route
 app.get('/', (req, res) =>{
     res.render('index')
 })
