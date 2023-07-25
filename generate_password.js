@@ -46,6 +46,10 @@ function generatePassword(options) {
         )
     }
 
+    if (collection.length === 0) {
+        return 'There is no valid character in your selection.'
+    }
+
     // start generating password
     let password = ''
     for (let i = 0; i < options.length; i++) {
@@ -54,7 +58,7 @@ function generatePassword(options) {
     // console.log(password)
     // return the generated password
     return password
-    
+
 }
 
 // generatePassword()
