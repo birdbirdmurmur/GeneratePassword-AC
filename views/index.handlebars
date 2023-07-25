@@ -14,7 +14,7 @@
 								Password Length
 							</label>
 							<div class="col-md-8">
-								<input type="number" name="length" class="form-control" id="length" min="4" max="16" />
+								<input type="number" name="length" class="form-control" id="length" min="4" max="16" value="{{options.length}}"/>
 								<small class="text-muted form-text">
 									Length is available between 4 ~ 16
 								</small>
@@ -27,7 +27,7 @@
 							</label>
 							<div class="col-md-8">
 								<div class="custom-control custom-checkbox">
-									<input type="checkbox" class="custom-control-input" id="lowercase" name="lowercase" />
+									<input type="checkbox" class="custom-control-input" id="lowercase" name="lowercase" {{#if options.lowercase}} checked {{/if}} />
 									<label class="custom-control-label" for="lowercase">
 										(e.g. abcdefg)
 									</label>
@@ -41,7 +41,7 @@
 							</label>
 							<div class="col-md-8">
 								<div class="custom-control custom-checkbox">
-									<input type="checkbox" class="custom-control-input" id="uppercase" name="uppercase" />
+									<input type="checkbox" class="custom-control-input" id="uppercase" name="uppercase" {{#if options.uppercase}} checked {{/if}}/>
 									<label class="custom-control-label" for="uppercase">
 										(e.g. ABCDEFG)
 									</label>
@@ -55,7 +55,7 @@
 							</label>
 							<div class="col-md-8">
 								<div class="custom-control custom-checkbox">
-									<input type="checkbox" class="custom-control-input" id="numbers" name="numbers" />
+									<input type="checkbox" class="custom-control-input" id="numbers" name="numbers" {{#if options.numbers}} checked {{/if}}/>
 									<label class="custom-control-label" for="numbers">
 										(e.g. 123456)
 									</label>
@@ -69,7 +69,7 @@
 							</label>
 							<div class="col-md-8">
 								<div class="custom-control custom-checkbox">
-									<input type="checkbox" class="custom-control-input" id="symbols" name="symbols" />
+									<input type="checkbox" class="custom-control-input" id="symbols" name="symbols" {{#if options.symbols}} checked {{/if}}/>
 									<label class="custom-control-label" for="symbols">
 										(e.g. @#$%)
 									</label>
@@ -82,7 +82,7 @@
 								Exclude Characters
 							</label>
 							<div class="col-md-8">
-								<input type="text" name="excludeCharacters" class="form-control" id="exclude-characters" />
+								<input type="text" name="excludeCharacters" class="form-control" id="exclude-characters" value="{{options.excludeCharacters}}"/>
 								<small class="text-muted form-text">
 									These characters will not appear in the password
 								</small>
